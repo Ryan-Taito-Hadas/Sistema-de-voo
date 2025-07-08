@@ -1,41 +1,35 @@
 # Sistema de Reserva de Voos
-__________________________________________________________________________________________________________________________________
 
-Este sistema simula a reserva de voos em Python com foco no uso de **Programação Orientada a Objetos (POO)** e dados gerados automaticamente via biblioteca `Faker`. Foi desenvolvido como atividade acadêmica para demonstrar conceitos como encapsulamento, modularização e uso de listas e classes interligadas.
+Este projeto é um sistema de reserva de voos desenvolvido em Python como atividade acadêmica. O foco principal é aplicar conceitos de Programação Orientada a Objetos (POO), como encapsulamento, modularização e interação entre classes. O sistema também utiliza a biblioteca Faker para gerar dados automáticos.
 
-__________________________________________________________________________________________________________________________________
-# O que o sistema já faz:
+# Funcionalidades do sistema
+Geração automática de dados
 
-# Geração automática de dados:
-- **10 aviões** já são criados ao iniciar o sistema, cada um com modelo, companhia, identificação, capacidade de assentos e distância máxima.
-- **10 voos** também são gerados automaticamente, com origem fixada em Campo Grande e destinos variados.
-- Cada voo é vinculado a um dos aviões já criados.
-- **2480 passageiros** são gerados com nome, CPF, data de nascimento e passaporte.
-- Esses passageiros são divididos e **automaticamente alocados nos voos**, respeitando a capacidade de cada avião.
-- Cada voo recebe **4 tripulantes** gerados automaticamente (piloto, copiloto e dois comissários).
-- Os **assentos são atribuídos aleatoriamente** de 1 a 250, evitando sobras previsíveis.
+-10 aviões são criados ao iniciar o sistema, cada um com modelo, companhia, capacidade de assentos e distância máxima.
+-10 voos são gerados automaticamente, com origem em Campo Grande e destinos variados.
+-Cada voo é vinculado a um dos aviões.
+-2480 passageiros são criados com nome, CPF, data de nascimento e passaporte. (2 assentos disponíveis em cada voo pra possibilitar a criação e alocação manual de um passageiro.)
+-Os passageiros são automaticamente distribuídos entre os voos, respeitando a capacidade dos aviões.
+-Cada voo recebe 4 tripulantes gerados automaticamente (piloto, copiloto e dois comissários).
+-Assentos são atribuídos aleatoriamente de 1 a 250 para cada voo.
 
-# Funcionalidades no menu:
-- **Menu Passageiro**:
-- Permite criar passageiros manualmente.
-- Permite excluir passageiros da lista.
-- (*Ainda não é possível associar um passageiro manualmente criado a um voo.*)
+# Menu Passageiro
 
-- **Menu Ver Voos Disponíveis**:
-  - Lista todos os 10 voos criados.
-  - Mostra origem, destino, data, avião utilizado e **quantos e quais assentos ainda estão disponíveis**.
+-Permite cadastrar novos passageiros manualmente.
+-Permite excluir passageiros.
+-Permite reservar um assento para um passageiro em um voo disponível.
 
-- **Menu Ver 10 Passageiros Aleatórios por Voo**:
-  - Para cada voo, seleciona e exibe 10 passageiros aleatórios que já foram alocados.
+# Menu de Voos
 
-__________________________________________________________________________________________________________________________________
+-Exibe os 10 voos criados com detalhes como origem, destino, data e avião.
+-Mostra os assentos disponíveis em cada voo.
+-Visualização de Passageiros
+-Para cada voo, exibe 10 passageiros aleatórios já alocados.
 
-# Como executar:
+### Como executar
 
-1. Instale o Python 3.11+.
-2. Instale a biblioteca `Faker`:
+Instale o Python 3.11 ou superior.
 
-```bash
-pip install faker
+Instale a biblioteca Faker:
 
-(_________________________________________________________________________________________________________________________________)
+Execute o arquivo main.py para iniciar o sistema.

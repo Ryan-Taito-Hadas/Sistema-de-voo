@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 
 faker = Faker("pt_BR")
 
+#______________________________________________________________________________________
+
 def gerar_passageiros_e_voos(passageiros: list[Passageiro]) -> list[Voo]:
 
     modelos = [
@@ -62,3 +64,5 @@ def gerar_passageiros_e_voos(passageiros: list[Passageiro]) -> list[Voo]:
         voos.append(voo)
 
     return voos
+
+#______________________________________________________________________________________

@@ -1,5 +1,7 @@
 from datetime import date, datetime
 
+#______________________________________________________________________________________
+
 class Pessoa:
     def __init__(self, nome: str, cpf: str, data_nascimento: str):
         self._nome = nome
@@ -43,6 +45,8 @@ class Pessoa:
         idade = hoje.year - nascimento.year - ((hoje.month, hoje.day) < (nascimento.month, nascimento.day))
         return idade
 
+#______________________________________________________________________________________
+
 class Tripulante(Pessoa):
     def __init__(self, nome: str, cpf: str, data_nascimento: str, tipo: str):
         super().__init__(nome, cpf, data_nascimento)
@@ -58,6 +62,8 @@ class Tripulante(Pessoa):
 
     def __str__(self):
         return f"{self.nome} - Tripulante ({self.tipo})"
+
+#______________________________________________________________________________________
 
 class Passageiro(Pessoa):
 
@@ -76,3 +82,4 @@ class Passageiro(Pessoa):
     def __str__(self):
         return f"{self.nome}, {self.get_idade()} anos - Passageiro (Passaporte: {self.numero_passaporte})"
 
+#______________________________________________________________________________________

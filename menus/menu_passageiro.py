@@ -1,8 +1,10 @@
 from datetime import datetime
+from entidades.passagem import reservar_voo_para_passageiro
 from menus.voltar_menu import voltar_menu
 from entidades.pessoa import Passageiro
 from faker import Faker
 from menus.voltar_menu import voltar_menu
+from entidades.aviao import Voo
 
 faker = Faker('pt_BR')
 
@@ -49,7 +51,7 @@ def excluir_passageiro(passageiros: list[Passageiro]):
 
 #___________________________________________________________________________________________
 
-def menu_passageiro(passageiros: list[Passageiro]):
+def menu_passageiro(passageiros: list[Passageiro], voos: list[Voo]):
     while True:
         try:
             escolha = int(input(""" 
@@ -62,17 +64,21 @@ Selecione a opção desejada:
 0) Retorne ao Menu
 1) Cadastrar novo passageiro
 2) Excluir passageiro já criado
+3) Reservar assento
 ________________________________ 
 
 Opção desejada -> """))
             if escolha == 0:
                 break
             
-            if escolha == 1:
+            elif escolha == 1:
                 cadastrar_passageiro(passageiros)
 
-            if escolha == 2:
+            elif escolha == 2:
                 excluir_passageiro(passageiros)
+
+            elif escolha == 3:
+                reservar_voo_para_passageiro(passageiros, voos)
 
         except ValueError:
             print("""

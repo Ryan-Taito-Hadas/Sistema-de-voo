@@ -2,6 +2,8 @@ from entidades.passagem import Passagem
 from entidades.pessoa import Passageiro, Tripulante
 from datetime import datetime
 
+#______________________________________________________________________________________________________________________________
+
 class Aviao:
     def __init__(self, modelo: str, identificacao: str, companhia: str, quantidade_assentos: int, distancia_maxima_km: int):
         self._modelo = modelo
@@ -32,7 +34,9 @@ class Aviao:
 
     def __str__(self) -> str:
         return f"Avião {self._identificacao} - {self._modelo} ({self._companhia})"
-    
+
+#______________________________________________________________________________________________________________________________
+
 class Voo:
     def __init__(self, id_voo: str, aviao: Aviao, origem: str, destino: str, data_hora: datetime, tripulacao: list[Tripulante]):
         self.id_voo = id_voo
@@ -66,3 +70,5 @@ class Voo:
 
     def __str__(self):
         return f"Voo {self.id_voo} | {self.origem} -> {self.destino} | {self.data_hora.strftime('%d/%m/%Y %H:%M')}"
+    
+#______________________________________________________________________________________________________________________________

@@ -1,6 +1,8 @@
 import os
 from menus.voltar_menu import voltar_menu
 
+#______________________________________________________________________________________
+
 def mostrar_voos_disponiveis(voos):
     os.system('cls' if os.name == 'nt' else 'clear')
     print("Lista de Voos Disponíveis:")
@@ -20,6 +22,8 @@ def mostrar_voos_disponiveis(voos):
 
     voltar_menu()
 
+#______________________________________________________________________________________
+
 def mostrar_voos_especificos(voos):
     import random
     os.system('cls')
@@ -38,3 +42,5 @@ def mostrar_voos_especificos(voos):
         print("="*80 + "\n")
 
     voltar_menu()
+
+#______________________________________________________________________________________

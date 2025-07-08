@@ -31,7 +31,7 @@ ________________________________________________________________________________
             continue
 
         if escolha == 1:
-            menu_passageiro(passageiros)
+            menu_passageiro(passageiros, voos)
 
         elif escolha == 2:
             mostrar_voos_disponiveis(voos)
