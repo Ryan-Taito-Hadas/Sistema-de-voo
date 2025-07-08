@@ -34,7 +34,11 @@ class Pessoa:
         return f"{self.nome} (CPF: {self.cpf})"
     
     def get_idade(self) -> int:
-        nascimento = datetime.strptime(self.data_nascimento, "%d/%m/%Y").date()
+        try:
+            nascimento = datetime.strptime(self.data_nascimento, "%d/%m/%Y").date()
+        except ValueError:
+            print("Data de nascimento inválida. Use o formato DD/MM/AAAA.")
+            return -1
         hoje = date.today()
         idade = hoje.year - nascimento.year - ((hoje.month, hoje.day) < (nascimento.month, nascimento.day))
         return idade
@@ -56,6 +60,7 @@ class Tripulante(Pessoa):
         return f"{self.nome} - Tripulante ({self.tipo})"
 
 class Passageiro(Pessoa):
+
     def __init__(self, nome: str, cpf: str, data_nascimento: str, numero_passaporte: str):
         super().__init__(nome, cpf, data_nascimento)
         self._numero_passaporte = numero_passaporte
