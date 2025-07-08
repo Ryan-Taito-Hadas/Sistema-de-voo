@@ -1,3 +1,5 @@
+from datetime import date, datetime
+
 class Pessoa:
     def __init__(self, nome: str, cpf: str, data_nascimento: str):
         self._nome = nome
@@ -30,6 +32,12 @@ class Pessoa:
 
     def __str__(self):
         return f"{self.nome} (CPF: {self.cpf})"
+    
+    def get_idade(self) -> int:
+        nascimento = datetime.strptime(self.data_nascimento, "%d/%m/%Y").date()
+        hoje = date.today()
+        idade = hoje.year - nascimento.year - ((hoje.month, hoje.day) < (nascimento.month, nascimento.day))
+        return idade
 
 class Tripulante(Pessoa):
     def __init__(self, nome: str, cpf: str, data_nascimento: str, tipo: str):
@@ -61,5 +69,5 @@ class Passageiro(Pessoa):
         self._numero_passaporte = value
 
     def __str__(self):
-        return f"{self.nome} - Passageiro (Passaporte: {self.numero_passaporte})"
+        return f"{self.nome}, {self.get_idade()} anos - Passageiro (Passaporte: {self.numero_passaporte})"
 
